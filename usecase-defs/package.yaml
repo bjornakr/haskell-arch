@@ -1,0 +1,8 @@
+name: usecase-defs
+
+dependencies:
+- base >= 4.7 && < 5
+- text == 1.2.3.1
+
+library:
+  source-dirs: src

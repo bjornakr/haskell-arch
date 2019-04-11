@@ -1,0 +1,22 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: dc1ee7808742f6d9c34e8e9e29a68ebe57d18595897f41b6923910dd32f11d3f
+
+name:           usecase-defs
+version:        0.0.0
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  exposed-modules:
+      CreateFlashCardDef
+  other-modules:
+      Paths_usecase_defs
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , text ==1.2.3.1
+  default-language: Haskell2010
