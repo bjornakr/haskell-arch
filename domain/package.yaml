@@ -1,11 +1,9 @@
-name: usecase
+name: domain
 
 dependencies:
-- usecase-defs
-- domain
 - base >= 4.7 && < 5
 - text == 1.2.3.1
-
+- time == 1.8.0.2
 library:
   source-dirs: src
 
@@ -18,4 +16,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - usecase
+    - domain

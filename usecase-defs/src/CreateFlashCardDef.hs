@@ -6,11 +6,11 @@ import qualified Data.Text as T
 
 data CreateCardError = DatabaseError T.Text
 
-newtype CardId = CardId Int
-newtype Side = Side T.Text
-newtype Front = Front T.Text
-newtype Back = Back T.Text
-data CardInput = CardInput Front Back
+newtype CardId = CardId Int deriving (Eq, Show)
+newtype Side = Side T.Text deriving (Eq, Show)
+newtype Front = Front T.Text deriving (Eq, Show)
+newtype Back = Back T.Text deriving (Eq, Show)
+data CardInput = CardInput Front Back deriving (Eq, Show)
 
-class CreateFlashCardOps where
-    createFlashCard :: CardInput -> IO CardId
+class Ops where
+    apply :: CardInput -> IO CardId

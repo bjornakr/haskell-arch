@@ -6,7 +6,10 @@
 {-# OPTIONS_GHC -XMultiParamTypeClasses #-}
 module Main where
 
-import Lib
+import qualified CreateFlashCard
+import qualified Console
 
 main :: IO ()
-main = someFunc
+main = do
+    putStrLn "Welcome!"
+    Console.main

@@ -2,32 +2,31 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 7a460e98bf17d0f72b1ef9f00f715aebbe340d7adbccae1e03a9bd8c3e415320
+-- hash: e25500c064febfbcb7debac5282c4bb8aec7fee52660aadbe2adfc1de7d09044
 
-name:           usecase
+name:           domain
 version:        0.0.0
 build-type:     Simple
 cabal-version:  >= 1.10
 
 library
   exposed-modules:
-      CreateFlashCard
+      FlashCard
   other-modules:
-      Paths_usecase
+      Paths_domain
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
-    , domain
     , text ==1.2.3.1
-    , usecase-defs
+    , time ==1.8.0.2
   default-language: Haskell2010
 
 test-suite haskell-arch-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_usecase
+      Paths_domain
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -35,6 +34,5 @@ test-suite haskell-arch-test
       base >=4.7 && <5
     , domain
     , text ==1.2.3.1
-    , usecase
-    , usecase-defs
+    , time ==1.8.0.2
   default-language: Haskell2010

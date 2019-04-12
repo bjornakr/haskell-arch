@@ -1,7 +1,14 @@
 {-# OPTIONS_GHC -XMultiParamTypeClasses #-}
 
 module CreateFlashCard where
-    import CreateFlashCardDef
+  import qualified CreateFlashCardDef as Def
+  import qualified FlashCard
 
-    instance CreateFlashCardOps where
-        createFlashCard _ = pure $ CardId 1
+  import qualified Data.Text as T
+
+  instance Def.Ops where
+      apply (CardInput (Front frontText) (Back backText)) = do
+        let front = Flashcard.createFront frontText
+        let back = Flashcard.createBack backText
+        let card = FlashCard.createCard front back
+        pure $ CardId 1
