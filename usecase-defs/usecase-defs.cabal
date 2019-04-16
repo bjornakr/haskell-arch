@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: dc1ee7808742f6d9c34e8e9e29a68ebe57d18595897f41b6923910dd32f11d3f
+-- hash: f7669305851b0031d5434d50a0828dbc1978bc9b0bad3f0f701bacbb8abaaaa7
 
 name:           usecase-defs
 version:        0.0.0
@@ -12,6 +12,7 @@ cabal-version:  >= 1.10
 library
   exposed-modules:
       CreateFlashCardDef
+      RegisterWinDef
   other-modules:
       Paths_usecase_defs
   hs-source-dirs:

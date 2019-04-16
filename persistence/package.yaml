@@ -1,0 +1,22 @@
+name: persistence
+
+dependencies:
+- domain
+- base >= 4.7 && < 5
+- mtl == 2.2.2
+- containers == 0.6.0.1
+- text == 1.2.3.1
+
+library:
+  source-dirs: src
+
+tests:
+  haskell-arch-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - usecase

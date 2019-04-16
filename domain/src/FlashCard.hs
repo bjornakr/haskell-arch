@@ -27,7 +27,7 @@ data Attempt = Attempt Result UTCTime
 
 data FlashCard = FlashCard Front Back [Attempt] -- Attempts should be a sorted list of some kind
 
-newtype Rank = Rank Double
+newtype Rank = Rank Int
 
 newtype WinStreak = WinStreak Int
 
@@ -54,28 +54,22 @@ registerResult currentTime result (FlashCard f b attempts) =
     FlashCard f b (attempt : attempts)
 
 calculateWinStreak :: [Attempt] -> WinStreak
-calculateWinStreak = undefined
+calculateWinStreak as =
+  let
+    loop [] winCount = WinStreak winCount
+    loop ((Attempt Fail _):_) winCount = WinStreak winCount
+    loop ((Attempt Win _):as) winCount = loop as (winCount + 1)
+  in
+    loop as 0
 
 rank :: UTCTime -> FlashCard -> Rank
-rank _ (FlashCard _ _ []) = 0
+rank _ (FlashCard _ _ []) = Rank 0
 rank currentTime (FlashCard _ _ attempts@((Attempt _ lastAttemptTime):_)) =
   let
-    daysSinceLastVisited = diffDays lastAttemptTime currentTime
-    visitedBonus = 1.0
+    daysSinceLastVisit = diffDays (utctDay lastAttemptTime) (utctDay currentTime)
+    touchedBonus = 1
     (WinStreak winStreakCount) = calculateWinStreak attempts
   in
     Rank $
-      visitedBonus +
-      daysSinceLastVisited -
-      ((max 0.0 (winStreakCount - 3.0)) ** 2)
-
--- abstract case class CardStatistics(lastVisited: Option[ZonedDateTime], wins: Wins, losses: Losses, winStreak: WinStreak) {
---     def rating(now: ZonedDateTime): Int = {
---         val (visitedBonus, daysSinceLastVisited) = lastVisited match {
---             case None => (0, 0)
---             case Some(last) => (1, Period.between(last.toLocalDate, now.toLocalDate).getDays)
---         }
-
---         visitedBonus + daysSinceLastVisited - Math.pow(Math.max(0, winStreak.get - 3), 2).toInt
---     }
--- }
+      touchedBonus +
+      (fromIntegral daysSinceLastVisit) - ((max 0 (winStreakCount - 3)) ^ 2)

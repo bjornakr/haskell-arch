@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e25500c064febfbcb7debac5282c4bb8aec7fee52660aadbe2adfc1de7d09044
+-- hash: 40e5661c06572f897be39e223005b5f41f6777da43281f6e711af67f96a4ca62
 
 name:           domain
 version:        0.0.0
@@ -12,6 +12,9 @@ cabal-version:  >= 1.10
 library
   exposed-modules:
       FlashCard
+      FlashCard.CreateFlashCard
+      FlashCard.Internal.Common
+      FlashCard.RegisterWin
   other-modules:
       Paths_domain
   hs-source-dirs:
