@@ -7,4 +7,5 @@ import FlashCard.Internal.Common
 data CardId = CardId Int
 
 class Monad m => FlashCardStore m where
-  save :: FlashCard -> m (CardId)
+  save :: FlashCard -> m CardId
+  get :: CardId -> m FlashCard
