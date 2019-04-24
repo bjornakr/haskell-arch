@@ -9,7 +9,7 @@ module RegisterWin where
   import FlashCard.Internal.Common
 
   instance Def.Ops where
-    apply :: (Monad m, Time.Ops, Store.FlashCardStore m) => Def.CardId -> IO ()
+    apply :: (Monad m, Time.Ops m, Store.FlashCardStore m) => Def.CardId -> m ()
     apply (Def.CardId i) = do
       let cardId = Store.CardId i -- common domain import?
       p <- pure ()

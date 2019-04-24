@@ -1,13 +1,14 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 7fe03a324a0820640696bbfc7ff3eca90193ca2464330feba57e97159d7569e2
+-- hash: d6e8fe2a74ef14e2acf8874935ad3c3a10ddc13514f4955955fd97677a2c1fda
 
 name:           console-adapter
 version:        0.0.0
 build-type:     Simple
-cabal-version:  >= 1.10
 
 library
   exposed-modules:

@@ -4,5 +4,5 @@ module Time where
 
 import Data.Time
 
-class Ops where
-  now :: IO UTCTime
+class (Monad m) => Ops m where
+  now :: m UTCTime

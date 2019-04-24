@@ -1,13 +1,14 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f7669305851b0031d5434d50a0828dbc1978bc9b0bad3f0f701bacbb8abaaaa7
+-- hash: 3bdfa55a68835c396f53ce6ef8da7e920bcd7f0dc465c60bc78f8b6fb18d9016
 
 name:           usecase-defs
 version:        0.0.0
 build-type:     Simple
-cabal-version:  >= 1.10
 
 library
   exposed-modules:

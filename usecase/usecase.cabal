@@ -1,18 +1,20 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b33ecefc9a782e48a8090e9f6898caf5d5c6403f721c990d1a25157d6d33d037
+-- hash: 14262b211cf154206ea59a6cff4c6d45a343d9d571250d67407bcee2a380e13c
 
 name:           usecase
 version:        0.0.0
 build-type:     Simple
-cabal-version:  >= 1.10
 
 library
   exposed-modules:
       CreateFlashCard
       RegisterWin
+      Time
   other-modules:
       Paths_usecase
   hs-source-dirs:

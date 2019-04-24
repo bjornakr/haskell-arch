@@ -1,13 +1,14 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1adf4e342ca2503fe39c0f510cfa7594227b6fdeca1f8ddfc68a94ee70e3dc0d
+-- hash: f88325e39161d17f2f46c8f44142476c40afe9b955536fad7d42944a9f7f7565
 
 name:           persistence
 version:        0.0.0
 build-type:     Simple
-cabal-version:  >= 1.10
 
 library
   exposed-modules:
